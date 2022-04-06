@@ -1,0 +1,25 @@
+{
+  "name": "practice-tdd-setup",
+  "version": "1.0.0",
+  "description": "a setup for tdd katas",
+  "main": "index.js",
+  "repository": "https://github.com/lucyHD/tdd-starter-kata-pratice.git",
+  "author": "Lucy Donnelly <lucy.donnelly@autotrader.co.uk>",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest",
+    "test:watch" : "jest --watch"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.[t|j]sx?$": "babel-jest"
+    }
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.8",
+    "@babel/preset-env": "^7.16.11",
+    "babel-jest": "^27.5.1",
+    "jest": "^27.5.1"
+  }
+}
