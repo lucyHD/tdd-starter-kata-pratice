@@ -9,13 +9,31 @@ export const generateDoors = num => {
 }
 
 export const Doors = (numberOfDoors, numberOfPasses) => {
-  //get an array of doors using generateDoors
 
-  //go through the array and change the closed doors to open doors
+  const arrayOfDoors = generateDoors(numberOfDoors)
 
-  //return the joined array so it is a single string
+  const arrayOfOpenDoors = arrayOfDoors.map( (door, index) => { 
+      
+    index += 1; //adjust from 0 index to count from 1
+       
+
+      if(numberOfPasses === 1){
+        return '@'
+      }
+      else {
+         
+        if(index % 2 !== 0){
+           return '@'
+        }
+
+        return door;
+
+      }
 
 
-  return numberOfDoors === 1 ? '@' : '@@';
+    })
+
+
+  return arrayOfOpenDoors.join(''); 
 
 }
