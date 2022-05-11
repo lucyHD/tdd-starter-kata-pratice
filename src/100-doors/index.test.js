@@ -2,16 +2,16 @@ import { Doors, generateDoors } from ".";
 
 let numberOfDoors;
 let numberOfPasses;
-// @ is open
-// # is closed
+// @ is open - true is open
+// # is closed - false is closed
 
 describe('generateDoors', () => {
     it('should return an array of length 1, when passed 1', () => {
-        expect(generateDoors(1)).toEqual(['#']);
+        expect(generateDoors(1)).toEqual([false]);
     })
 
     it('should return an array of length 3, when passed 3', () => {
-        expect(generateDoors(3)).toEqual(['#', '#', '#']);
+        expect(generateDoors(3)).toEqual([false, false, false]);
     })
 })
 
@@ -25,7 +25,7 @@ describe('100 doors ', () => {
         'should return if the door is open with one pass', (numberOfDoors, numberOfPasses, result) => {
             expect(Doors(numberOfDoors, numberOfPasses)).toEqual(result);
         }
-    ),
+    )
     it.each([
         [2, 2, '@#'],
         [3, 2, '@#@'],
@@ -36,14 +36,21 @@ describe('100 doors ', () => {
             expect(Doors(numberOfDoors, numberOfPasses)).toEqual(result);
         }
     )
-    // it.each([
-    //     [2, 3, '@#'],
-    //     [3, 3, '@##'],
-    //     [4, 3, '@###'],
-    // ])(
-    //     'should return the expected string with three passes', (numberOfDoors, numberOfPasses, result) => {
-    //         expect(Doors(numberOfDoors, numberOfPasses)).toEqual(result);
-    //     }
-    // )
+    it.each([
+        [2, 3, '@#'],
+        [3, 3, '@##'],
+        [4, 3, '@###'],
+    ])(
+        'should return the expected string with three passes', (numberOfDoors, numberOfPasses, result) => {
+            expect(Doors(numberOfDoors, numberOfPasses)).toEqual(result);
+        }
+    )
+    it.each([
+        [10, 10, '@##@####@#'],
+    ])(
+        'should return the expected string with 10 passes', (numberOfDoors, numberOfPasses, result) => {
+            expect(Doors(numberOfDoors, numberOfPasses)).toEqual(result);
+        }
+    )
 })
 
