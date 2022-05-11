@@ -10,7 +10,7 @@ export const generateDoors = num => {
 
 export const Doors = (numberOfDoors, numberOfPasses) => {
 
-  const arrayOfDoors = generateDoors(numberOfDoors)
+  const arrayOfDoors = generateDoors(numberOfDoors)//create array of closed doors - starting point
 
   const arrayOfOpenDoors = arrayOfDoors.map( (door, index) => { 
       

@@ -29,12 +29,21 @@ describe('100 doors ', () => {
     it.each([
         [2, 2, '@#'],
         [3, 2, '@#@'],
-        [4, 2, '@#@#']
+        [4, 2, '@#@#'] 
         
     ])(
         'should return the expected string with two passes', (numberOfDoors, numberOfPasses, result) => {
             expect(Doors(numberOfDoors, numberOfPasses)).toEqual(result);
         }
     )
+    // it.each([
+    //     [2, 3, '@#'],
+    //     [3, 3, '@##'],
+    //     [4, 3, '@###'],
+    // ])(
+    //     'should return the expected string with three passes', (numberOfDoors, numberOfPasses, result) => {
+    //         expect(Doors(numberOfDoors, numberOfPasses)).toEqual(result);
+    //     }
+    // )
 })
 
